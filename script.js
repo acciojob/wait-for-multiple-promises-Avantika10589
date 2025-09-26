@@ -1,7 +1,5 @@
-//your JS code here. If required.
-
 const output = document.getElementById("output");
-output.innerHTML = `<tr><td colspan="2" class="text-center">Loading...</td></tr>`;
+output.innerHTML = `<tr id="loading"><td colspan="2" class="text-center">Loading...</td></tr>`;
 
 function createPromise(name) {
   const time = (Math.random() * 2 + 1).toFixed(3);
@@ -33,9 +31,8 @@ Promise.all(promises).then((results) => {
     output.appendChild(row);
   });
 
-
+  // Add total row
   const totalRow = document.createElement("tr");
   totalRow.innerHTML = `<td>Total</td><td>${totalTime}</td>`;
   output.appendChild(totalRow);
 });
-
